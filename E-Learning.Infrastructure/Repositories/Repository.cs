@@ -41,7 +41,7 @@ namespace E_Learning.Infrastructure.Repositories
                     query = query.Include(prop);
                 }
             }
-            return await query.FirstOrDefaultAsync();
+            return await query.FirstOrDefaultAsync(filter);
         }
 
         public async Task<IQueryable<T>> GetAll(Expression<Func<T, bool>>? filter = null, string? includeProp = null)
